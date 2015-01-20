@@ -12,7 +12,9 @@ define(function() {
     },
 
     sum : function(arr) {
-      
+      return arr.reduce(function(acc, item) {
+        return acc + item;
+      });
     },
 
     remove : function(arr, item) {
