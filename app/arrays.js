@@ -28,7 +28,12 @@ define(function() {
     },
 
     removeWithoutCopy : function(arr, item) {
-      
+      var index = this.indexOf(arr, item);
+      while (index >= 0) {
+        arr.splice(index, 1);
+        index = this.indexOf(arr, item);
+      }
+      return arr;
     },
 
     append : function(arr, item) {
