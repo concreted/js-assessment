@@ -18,11 +18,17 @@ define(function() {
     },
 
     remove : function(arr, item) {
-
+      var result = [];
+      arr.map(function(current) {
+        if (current !== item) {
+          result.push(current);
+        }
+      });
+      return result;
     },
 
     removeWithoutCopy : function(arr, item) {
-
+      
     },
 
     append : function(arr, item) {
