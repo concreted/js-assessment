@@ -72,15 +72,32 @@ define(function() {
     },
 
     duplicates : function(arr) {
-
+      var counts = _.reduce(arr, function(d, current) {
+        d[current] = d[current] ? d[current] + 1 : 1;
+        return d;
+      }, {});
+      var results = [];
+      _.each(counts, function(value, key) {
+        if (value > 1) {
+          results.push(key);
+        }
+      });
+      return results;
     },
 
     square : function(arr) {
-
+      return arr.map(function(value) {
+        return value * value;
+      });
     },
 
     findAllOccurrences : function(arr, target) {
-
+      return arr.reduce(function(occurrences, value, index) {
+        if (value === target) {
+          occurrences.push(index);
+        }
+        return occurrences;
+      }, [])
     }
   };
 });
